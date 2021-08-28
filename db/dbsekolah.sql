@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 17 Agu 2021 pada 16.40
--- Versi server: 5.7.33
--- Versi PHP: 7.3.29
+-- Generation Time: Aug 28, 2021 at 05:34 PM
+-- Server version: 5.7.33
+-- PHP Version: 7.3.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,26 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `nama` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `username`, `password`) VALUES
-(2, 'admin', '21232f297a57a5a743894a0e4a801fc3');
+INSERT INTO `admin` (`id`, `username`, `password`, `nama`) VALUES
+(2, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'Admin');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `datasd`
+-- Table structure for table `datasd`
 --
 
 CREATE TABLE `datasd` (
@@ -53,19 +54,19 @@ CREATE TABLE `datasd` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `datasd`
+-- Dumping data for table `datasd`
 --
 
 INSERT INTO `datasd` (`kdSekolah`, `sekolah`, `alamat`) VALUES
 (23, 'SD INPRES 10/73 CEPPAGA', 'LIBURENG'),
 (24, 'SD 181 CEPPAGA', 'LIBURENG'),
 (25, 'SD 12/79 MALLINRUNG', 'MALLINRUNG'),
-(26, 'SD INP 10/73 LEPPANGENG', 'LAPRI');
+(26, 'SD INP 10/73 LEPPANGENG', 'LAPPARIAJA');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `datasma`
+-- Table structure for table `datasma`
 --
 
 CREATE TABLE `datasma` (
@@ -75,18 +76,17 @@ CREATE TABLE `datasma` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `datasma`
+-- Dumping data for table `datasma`
 --
 
 INSERT INTO `datasma` (`kdSekolah`, `sekolah`, `alamat`) VALUES
 (2, 'SMA NEGERI 5 BONE', 'Jl. Poros Makassar-Bone'),
-(3, 'SMA NEGERI 1 TOLI-TOLI', 'Jln. Panjaitan Toli-Toli'),
-(4, 'SMA NEGERI 11 BONE', 'Jl. Poros Makassar-Sinjai');
+(3, 'SMA NEGERI 1 TOLI-TOLI', 'Jln. Panjaitan Toli-Toli');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `datasmp`
+-- Table structure for table `datasmp`
 --
 
 CREATE TABLE `datasmp` (
@@ -96,7 +96,7 @@ CREATE TABLE `datasmp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `datasmp`
+-- Dumping data for table `datasmp`
 --
 
 INSERT INTO `datasmp` (`kdSekolah`, `sekolah`, `alamat`) VALUES
@@ -108,7 +108,7 @@ INSERT INTO `datasmp` (`kdSekolah`, `sekolah`, `alamat`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kriteria`
+-- Table structure for table `kriteria`
 --
 
 CREATE TABLE `kriteria` (
@@ -120,19 +120,19 @@ CREATE TABLE `kriteria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `kriteria`
+-- Dumping data for table `kriteria`
 --
 
 INSERT INTO `kriteria` (`kdKriteria`, `kriteria`, `kode`, `sifat`, `bobot`) VALUES
 (3, 'C1', 'Aspek Kebijakan Sekolah yang Berwawasan Lingkungan', 'B', 0.2),
-(6, 'C2', 'Aspek Kegiatan Sekolah Berbasis Partisipatif', 'B', 0.15),
+(6, 'C2', 'Aspek Kurikulum Sekolah Berbasis Lingkungan', 'B', 0.15),
 (7, 'C3', 'Aspek Kegiatan Sekolah Berbasis Partisipatif', 'B', 0.25),
 (8, 'C4', 'Aspek Pengelolaan Sarana dan Prasarana Pendukung Sekolah yang Ramah Lingkungan', 'B', 0.4);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `nilai`
+-- Table structure for table `nilai`
 --
 
 CREATE TABLE `nilai` (
@@ -142,7 +142,7 @@ CREATE TABLE `nilai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `nilai`
+-- Dumping data for table `nilai`
 --
 
 INSERT INTO `nilai` (`kdSekolah`, `kdKriteria`, `nilai`) VALUES
@@ -166,7 +166,7 @@ INSERT INTO `nilai` (`kdSekolah`, `kdKriteria`, `nilai`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `nilaisma`
+-- Table structure for table `nilaisma`
 --
 
 CREATE TABLE `nilaisma` (
@@ -176,7 +176,7 @@ CREATE TABLE `nilaisma` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `nilaisma`
+-- Dumping data for table `nilaisma`
 --
 
 INSERT INTO `nilaisma` (`kdSekolah`, `kdKriteria`, `nilai`) VALUES
@@ -187,16 +187,12 @@ INSERT INTO `nilaisma` (`kdSekolah`, `kdKriteria`, `nilai`) VALUES
 (3, 3, 1),
 (3, 6, 0.75),
 (3, 7, 0.25),
-(3, 8, 0),
-(4, 3, 0.75),
-(4, 6, 0.25),
-(4, 7, 1),
-(4, 8, 0);
+(3, 8, 0);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `nilaismp`
+-- Table structure for table `nilaismp`
 --
 
 CREATE TABLE `nilaismp` (
@@ -206,7 +202,7 @@ CREATE TABLE `nilaismp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `nilaismp`
+-- Dumping data for table `nilaismp`
 --
 
 INSERT INTO `nilaismp` (`kdSekolah`, `kdKriteria`, `nilai`) VALUES
@@ -230,7 +226,7 @@ INSERT INTO `nilaismp` (`kdSekolah`, `kdKriteria`, `nilai`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `subkriteria`
+-- Table structure for table `subkriteria`
 --
 
 CREATE TABLE `subkriteria` (
@@ -241,7 +237,7 @@ CREATE TABLE `subkriteria` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `subkriteria`
+-- Dumping data for table `subkriteria`
 --
 
 INSERT INTO `subkriteria` (`kdSubKriteria`, `subKriteria`, `value`, `kdKriteria`) VALUES
@@ -267,130 +263,130 @@ INSERT INTO `subkriteria` (`kdSubKriteria`, `subKriteria`, `value`, `kdKriteria`
 --
 
 --
--- Indeks untuk tabel `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `datasd`
+-- Indexes for table `datasd`
 --
 ALTER TABLE `datasd`
   ADD PRIMARY KEY (`kdSekolah`);
 
 --
--- Indeks untuk tabel `datasma`
+-- Indexes for table `datasma`
 --
 ALTER TABLE `datasma`
   ADD PRIMARY KEY (`kdSekolah`);
 
 --
--- Indeks untuk tabel `datasmp`
+-- Indexes for table `datasmp`
 --
 ALTER TABLE `datasmp`
   ADD PRIMARY KEY (`kdSekolah`);
 
 --
--- Indeks untuk tabel `kriteria`
+-- Indexes for table `kriteria`
 --
 ALTER TABLE `kriteria`
   ADD PRIMARY KEY (`kdKriteria`);
 
 --
--- Indeks untuk tabel `nilai`
+-- Indexes for table `nilai`
 --
 ALTER TABLE `nilai`
   ADD UNIQUE KEY `indexNilai` (`kdSekolah`,`kdKriteria`) USING BTREE,
   ADD KEY `kdKriteria` (`kdKriteria`);
 
 --
--- Indeks untuk tabel `nilaisma`
+-- Indexes for table `nilaisma`
 --
 ALTER TABLE `nilaisma`
   ADD UNIQUE KEY `indexNilai` (`kdSekolah`,`kdKriteria`) USING BTREE,
   ADD KEY `kdKriteria` (`kdKriteria`);
 
 --
--- Indeks untuk tabel `nilaismp`
+-- Indexes for table `nilaismp`
 --
 ALTER TABLE `nilaismp`
   ADD UNIQUE KEY `indexNilai` (`kdSekolah`,`kdKriteria`) USING BTREE,
   ADD KEY `kdKriteria` (`kdKriteria`);
 
 --
--- Indeks untuk tabel `subkriteria`
+-- Indexes for table `subkriteria`
 --
 ALTER TABLE `subkriteria`
   ADD PRIMARY KEY (`kdSubKriteria`),
   ADD KEY `kdKriteria` (`kdKriteria`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `datasd`
+-- AUTO_INCREMENT for table `datasd`
 --
 ALTER TABLE `datasd`
   MODIFY `kdSekolah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT untuk tabel `datasma`
+-- AUTO_INCREMENT for table `datasma`
 --
 ALTER TABLE `datasma`
-  MODIFY `kdSekolah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `kdSekolah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `datasmp`
+-- AUTO_INCREMENT for table `datasmp`
 --
 ALTER TABLE `datasmp`
   MODIFY `kdSekolah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
--- AUTO_INCREMENT untuk tabel `kriteria`
+-- AUTO_INCREMENT for table `kriteria`
 --
 ALTER TABLE `kriteria`
   MODIFY `kdKriteria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `subkriteria`
+-- AUTO_INCREMENT for table `subkriteria`
 --
 ALTER TABLE `subkriteria`
   MODIFY `kdSubKriteria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `nilai`
+-- Constraints for table `nilai`
 --
 ALTER TABLE `nilai`
   ADD CONSTRAINT `nilai_ibfk_1` FOREIGN KEY (`kdSekolah`) REFERENCES `datasd` (`kdSekolah`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `nilai_ibfk_2` FOREIGN KEY (`kdKriteria`) REFERENCES `kriteria` (`kdKriteria`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `nilaisma`
+-- Constraints for table `nilaisma`
 --
 ALTER TABLE `nilaisma`
   ADD CONSTRAINT `nilaisma_ibfk_1` FOREIGN KEY (`kdKriteria`) REFERENCES `kriteria` (`kdKriteria`) ON DELETE CASCADE,
   ADD CONSTRAINT `nilaisma_ibfk_2` FOREIGN KEY (`kdSekolah`) REFERENCES `datasma` (`kdSekolah`) ON DELETE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `nilaismp`
+-- Constraints for table `nilaismp`
 --
 ALTER TABLE `nilaismp`
   ADD CONSTRAINT `nilaismp_ibfk_1` FOREIGN KEY (`kdSekolah`) REFERENCES `datasmp` (`kdSekolah`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `nilaismp_ibfk_2` FOREIGN KEY (`kdKriteria`) REFERENCES `kriteria` (`kdKriteria`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ketidakleluasaan untuk tabel `subkriteria`
+-- Constraints for table `subkriteria`
 --
 ALTER TABLE `subkriteria`
   ADD CONSTRAINT `subkriteria_ibfk_1` FOREIGN KEY (`kdKriteria`) REFERENCES `kriteria` (`kdKriteria`) ON DELETE CASCADE ON UPDATE CASCADE;
