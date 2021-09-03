@@ -2,7 +2,25 @@
   <h1>Halaman Olah Sekolah Menengah Atas / SMA</h1>
 </div>
 <div class="col-lg-12">
-  <?php
+  
+  <div id="main">
+    <div class="row">
+    <form action="<?= base_url('SMA') ?>" method="POST">
+        <div class="form-inline">
+          <div class="form-group" style="float: left;">
+            <input name="keyword" type="text" class="form-control"  value="" placeholder="Search Keyword ..." autocomplete = "off"  autofocus>
+            <input name="submit" type="submit" class="btn btn-primary" value="Cari">
+          </div>
+        </div>
+      </form>
+      <div class="form-group">
+        <a href="<?php echo site_url('SMA/tambah') ?>" type="button" class="btn btn-primary">Tambah
+          Sekolah</a>
+      </div>
+    </div>
+    <div class="row">
+      <h4>Total <?= $total_rows; ?> Data</h4>
+      <?php
   $msg = $this->session->flashdata('message');
   if (isset($msg)) {
   ?>
@@ -13,14 +31,6 @@
   <?php
   }
   ?>
-  <div id="main">
-    <div class="row">
-      <div class="form-group">
-        <a href="<?php echo site_url('SMA/tambah') ?>" type="button" class="btn btn-primary">Tambah
-          Sekolah</a>
-      </div>
-    </div>
-    <div class="row">
       <div class="panel panel-primary">
         <div class="panel-heading">List Sekolah Menengah Atas</div>
         <div class="panel-content">

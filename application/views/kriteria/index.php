@@ -1,15 +1,4 @@
 <div class="col-lg-12">
-  <?php
-  $msg = $this->session->flashdata('message');
-  if (isset($msg)) {
-  ?>
-    <div class="alert alert-success alert-dismissable">
-      <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-      <?php echo $msg; ?>
-    </div>
-  <?php
-  }
-  ?>
   <div class="row">
     <div class="page-header">
       <h1>Halaman Olah Kriteria</h1>

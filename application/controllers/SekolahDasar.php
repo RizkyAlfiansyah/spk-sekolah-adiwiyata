@@ -25,9 +25,10 @@ class SekolahDasar extends MY_Controller
     public function index()
     {
 
-        if ($this->input->post('submit')) {
+        if ($this->input->post('generate')) {
             $data['keyword'] = $this->input->post('keyword');
             $this->session->set_userdata('keyword', $data['keyword']);
+            $this->session->set_flashdata('message', 'Hasil Pencarian');
         } else {
             $data['keyword'] = $this->session->userdata('keyword');
         }
@@ -95,7 +96,7 @@ class SekolahDasar extends MY_Controller
                             }
                         }
                         if ($success == true) {
-                            $this->session->set_flashdata('message', 'Berhasil menambah data :)');
+                            $this->session->set_flashdata('message', 'sukses');
                             redirect('SekolahDasar');
                         } else {
                             echo 'gagal';
@@ -132,7 +133,7 @@ class SekolahDasar extends MY_Controller
                             }
                         }
                         if ($success == true) {
-                            $this->session->set_flashdata('message', 'Berhasil mengubah data :)');
+                            $this->session->set_flashdata('message', 'Sukses');
                             redirect('SekolahDasar');
                         } else {
                             echo 'Tidak Ada yang di Ubah';

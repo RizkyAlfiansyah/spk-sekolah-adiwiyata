@@ -60,10 +60,11 @@ class Rangking extends MY_Controller
          */
         $table1 = $this->initialTableSAW($sekolah);
         // $totalrows['total'] = $this->$table1->total_rows();
-        //dd($table1);
-
+        // dd($table1);
 
         $this->page->setData('table1', $table1);
+        // dump($totaltabel);
+        // die;
 
 
         /**

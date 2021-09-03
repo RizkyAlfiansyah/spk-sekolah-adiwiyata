@@ -25,8 +25,19 @@ class SMP extends MY_Controller
     public function index()
     {
 
+        if ($this->input->post('generate')) {
+            $data['keyword'] = $this->input->post('keyword');
+            $this->session->set_userdata('keyword', $data['keyword']);
+            $this->session->set_flashdata('message', 'Hasil Pencarian');
+        } else {
+            $data['keyword'] = $this->session->userdata('keyword');
+        }
+
+        $this->db->like('sekolah', $data['keyword']);
+        $this->db->from('datasmp');
+
         $config['base_url'] = 'http://localhost/spksekolah/SMP/index';
-        $config['total_rows'] = $this->MMenengah->countAll();
+        $config['total_rows'] = $this->db->count_all_results();
         $config['per_page'] = 5;
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
@@ -41,12 +52,13 @@ class SMP extends MY_Controller
         $config['num_tag_open'] = '<li>';
         $config['num_tag_close'] = '</li>';
 
+        $data['total_rows'] = $config['total_rows'];
 
         $this->pagination->initialize($config);
         // dd($config['total_rows']);
 
         $data['start'] = $this->uri->segment(3);
-        $data['sekolah'] = $this->MMenengah->getAll($config['per_page'], $data['start']);
+        $data['sekolah'] = $this->MMenengah->getAll($config['per_page'], $data['start'], $data['keyword']);
         $this->load->view('menu/index', $data);
         $this->load->view('smp/index', $data);
     }
@@ -84,7 +96,7 @@ class SMP extends MY_Controller
                             }
                         }
                         if ($success == true) {
-                            $this->session->set_flashdata('message', 'Berhasil menambah data :)');
+                            $this->session->set_flashdata('message', 'Sukses');
                             redirect('SMP');
                         } else {
                             echo 'gagal';
@@ -121,7 +133,7 @@ class SMP extends MY_Controller
                             }
                         }
                         if ($success == true) {
-                            $this->session->set_flashdata('message', 'Berhasil mengubah data :)');
+                            $this->session->set_flashdata('message', 'Sukses');
                             redirect('SMP');
                         } else {
                             echo 'Tidak Ada yang di Ubah';

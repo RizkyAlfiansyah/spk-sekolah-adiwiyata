@@ -2,24 +2,14 @@
   <h1>Halaman Olah Sekolah Dasar</h1>
 </div>
 <div class="col-lg-12">
-  <?php
-  $msg = $this->session->flashdata('message');
-  if (isset($msg)) {
-  ?>
-    <div class="alert alert-success alert-dismissable">
-      <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-      <?php echo $msg; ?>
-    </div>
-  <?php
-  }
-  ?>
+  
   <div id="main">
     <div class="row">
       <form action="<?= base_url('SekolahDasar') ?>" method="POST">
         <div class="form-inline">
           <div class="form-group" style="float: left;">
-            <input name="keyword" type="text" class="form-control" id="alamat" value="" placeholder="Search Keyword ..." autofocus>
-            <input name="submit" type="submit" class="btn btn-primary" value="Cari">
+            <input name="keyword" type="text" class="form-control" value="" placeholder="Search Keyword ..." autocomplete = "off"  autofocus>
+            <input name="generate" type="submit" class="btn btn-primary" value="Cari">
           </div>
         </div>
       </form>
@@ -30,6 +20,17 @@
     </div>
     <div class="row">
       <h4>Total <?= $total_rows; ?> Data</h4>
+      <?php
+  $msg = $this->session->flashdata('message');
+  if (isset($msg)) {
+  ?>
+    <div class="alert alert-success alert-dismissable">
+      <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+      <?php echo $msg; ?>
+    </div>
+  <?php
+  }
+  ?>
       <div class="panel panel-primary">
         <div class="panel-heading">List Sekolah Dasar</div>
         <div class="panel-content">
