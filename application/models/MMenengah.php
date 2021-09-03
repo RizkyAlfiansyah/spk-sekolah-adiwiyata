@@ -33,7 +33,19 @@ class MMenengah extends CI_Model
         return $data;
     }
 
-    public function getAll()
+    public function getAll($limit, $start)
+    {
+        $sekolah = array();
+        $query = $this->db->get($this->getTable(), $limit, $start);
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $sekolah[] = $row;
+            }
+        }
+        return $sekolah;
+    }
+
+    public function getAllData()
     {
         $sekolah = array();
         $query = $this->db->get($this->getTable());
@@ -44,6 +56,8 @@ class MMenengah extends CI_Model
         }
         return $sekolah;
     }
+
+
 
 
     public function insert()
@@ -88,5 +102,10 @@ class MMenengah extends CI_Model
         $query = $this->db->get();
 
         return $query->row();
+    }
+
+    public function countAll()
+    {
+        return $this->db->get($this->getTable())->num_rows();
     }
 }

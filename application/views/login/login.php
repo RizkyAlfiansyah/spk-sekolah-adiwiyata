@@ -14,8 +14,8 @@
 </head>
 
 <body class="bg-light">
-  <div class="container ">
-    <div class="col-md-7 mx-auto bg-white shadow  p-3 py-5 mt-5 mb-5 rounded-3 border border-3 border-dark">
+  <div class="container">
+    <div class="col-md-7 mx-auto bg-white shadow  p-3 py-4 my-3 rounded-3 border border-3 border-light">
       <div class="mx-3 h25">
 
         <img src="assets/images/umi.png" alt="logo" width="100" class="float-start mx-4">
@@ -23,7 +23,7 @@
         <!-- <img src="assets/images/logo.png" alt="logo" width="100" class="position-relative"> -->
         <h4 class="text-center mx-2 " style="font-family:'Poppins', sans-serif; "><strong>Sistem Pendukung Keputusan Penentuan Sekolah Adiwiyata Menggunakan Metode Simple Additive Weighting</strong> </h4>
       </div>
-      <form class="col-md-7 mx-auto bg-light bg-gradient shadow  p-3 py-5 mt-5 mb-5 border border-3 border-dark rounded-3" action="<?php echo base_url('Auth/login'); ?>" method="post">
+      <form class="col-md-7 mx-auto bg-light bg-gradient shadow  p-3 py-5 mt-5 mb-5 border border-3 border-light rounded-3" action="<?php echo base_url('Auth/login'); ?>" method="post">
         <div class="text-center" style="color: red;margin-bottom: 15px;">
           <?php
           // Cek apakah terdapat session nama message
@@ -49,7 +49,7 @@
           }
           ?>
         </div>
-        <input type="submit" name="bLogin" value="Login" class="btn btn-outline-primary form-control rounded-pill p-2 font-costom mt-3">
+        <input type="submit" name="bLogin" value="Login" class="btn btn-primary shadow form-control rounded-pill p-2 font-costom mt-3">
       </form>
     </div>
   </div>

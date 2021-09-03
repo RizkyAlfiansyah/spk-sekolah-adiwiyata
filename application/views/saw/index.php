@@ -1,12 +1,10 @@
 <div class="col-lg-12">
     <div class="container">
-
         <div class="row">
             <div class="page-header mx-1">
-                <h1>Halaman Hitung Rangking </h1>
+                <h1>Halaman Hitung <?php echo $this->page->generateTitle(); ?> </h1>
             </div>
             <div class="panel panel-primary">
-
                 <div class="panel-heading">Table Perhitungan</div>
                 <div class="panel-body">
                     <h2>Table 1 - Nilai Awal</h2>

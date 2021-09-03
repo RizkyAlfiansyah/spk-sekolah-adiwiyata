@@ -8,7 +8,7 @@ class Auth extends CI_Controller
     {
         parent::__construct();
         $this->load->model('MLogin');
-        $this->page->setTitle('Selamat Datang di SPK Sekolah Adiwiyata');
+        $this->page->setTitle('SPK Sekolah Adiwiyata');
     }
     public function index()
     {

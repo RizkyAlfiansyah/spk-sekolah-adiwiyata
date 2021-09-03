@@ -37,4 +37,3 @@ for(i=0;i<linkCollapse.length;i++){
   })
 }
 
-

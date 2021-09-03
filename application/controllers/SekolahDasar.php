@@ -24,7 +24,30 @@ class SekolahDasar extends MY_Controller
 
     public function index()
     {
-        $data['sekolah'] = $this->MDasar->getAll();
+
+        $config['base_url'] = 'http://localhost/spksekolah/SekolahDasar/index';
+        $config['total_rows'] = $this->MDasar->countAll();
+        $config['per_page'] = 5;
+        $config['full_tag_open'] = '<ul class="pagination">';
+        $config['full_tag_close'] = '</ul>';
+        $config['next_link'] = '&raquo';
+        $config['next_tag_open'] = '<li>';
+        $config['next_tag_close'] = '</li>';
+        $config['prev_link'] = '&laquo';
+        $config['prev_tag_open'] = '<li>';
+        $config['prev_tag_close'] = '</li>';
+        $config['cur_tag_open'] = '<li class="active"><a href="#">';
+        $config['cur_tag_close'] = '</a></li>';
+        $config['num_tag_open'] = '<li>';
+        $config['num_tag_close'] = '</li>';
+
+
+        $this->pagination->initialize($config);
+        // dd($config['total_rows']);
+
+        $data['start'] = $this->uri->segment(3);
+        $data['sekolah'] = $this->MDasar->getAll($config['per_page'], $data['start']);
+        //dd($data['sekolah']);
         $this->load->view('menu/index', $data);
         $this->load->view('sd/index', $data);
     }

@@ -54,6 +54,16 @@ class MSAW extends CI_Model
             return $saw;
         }
     }
+    public function getAlldata()
+    {
+        $query = $this->db->get($this->getTable());
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $saw[] = $row;
+            }
+            return $saw;
+        }
+    }
 
     public function getStatus($key)
     {
@@ -77,34 +87,28 @@ class MSAW extends CI_Model
         $this->dbforge->add_column($this->getTable(), $fields);
     }
 
-    public function getSortTotalByDesc()
+    public function getSortTotalByDesc($limit, $start)
     {
 
         $this->db->order_by('Total', 'desc');
-        $query = $this->db->get($this->getTable());
+        $dataSaw = array();
+        $query = $this->db->get($this->getTable(), $limit, $start);
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
                 $dataSaw[] = $row;
             }
             return $dataSaw;
         }
-    }
-
-    public function getSortRangkingByDesc()
-    {
-
-        $this->db->order_by('Rangking', 'asd');
-        $query = $this->db->get($this->getTable());
-        if ($query->num_rows() > 0) {
-            foreach ($query->result() as $row) {
-                $dataSaw[] = $row;
-            }
-            return $dataSaw;
-        }
+        $this->db->order_by('Rangking', 'asc');
     }
 
     public function dropTable()
     {
         $this->dbforge->drop_table($this->getTable(), TRUE);
+    }
+
+    public function countAll()
+    {
+        return $this->db->get($this->getTable())->num_rows();
     }
 }

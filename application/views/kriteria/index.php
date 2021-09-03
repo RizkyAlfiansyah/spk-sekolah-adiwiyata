@@ -14,48 +14,50 @@
     <div class="page-header">
       <h1>Halaman Olah Kriteria</h1>
     </div>
-    <div class="panel panel-primary">
-      <!-- Default panel contents -->
-      <div class="panel-heading">List Kriteria</div>
-      <div class="panel-content">
-        <div class="table-responsive">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>No</th>
-                <th>kode</th>
-                <th>Kriteria</th>
-                <th>Sifat</th>
-                <th>Bobot</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-
-              <?php
-              $no = 1;
-              foreach ($kriteria as $item) {
-
-
-              ?>
+    <div id="main">
+      <div class="panel panel-primary">
+        <!-- Default panel contents -->
+        <div class="panel-heading">List Kriteria</div>
+        <div class="panel-content">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
                 <tr>
-                  <td><?php echo $no++ ?></td>
-                  <td><?php echo $item->kriteria ?></td>
-                  <td><?php echo $item->kode ?></td>
-                  <td><?php echo $item->sifat ?></td>
-                  <td><?php echo $item->bobot ?></td>
-                  <td>
-
-                    <!-- Contextual button for informational alert messages -->
-                    <button type="button" class="btn btn-info btn-xs" onclick="lihat_kriteria(<?php echo $item->kdKriteria; ?>)">
-                      <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Lihat
-                    </button>
-
-                  </td>
+                  <th>No</th>
+                  <th>kode</th>
+                  <th>Kriteria</th>
+                  <th>Sifat</th>
+                  <th>Bobot</th>
+                  <th>Action</th>
                 </tr>
-              <?php } ?>
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+
+                <?php
+                $no = 1;
+                foreach ($kriteria as $item) {
+
+
+                ?>
+                  <tr>
+                    <td><?php echo $no++ ?></td>
+                    <td><?php echo $item->kriteria ?></td>
+                    <td><?php echo $item->kode ?></td>
+                    <td><?php echo $item->sifat ?></td>
+                    <td><?php echo $item->bobot ?></td>
+                    <td>
+
+                      <!-- Contextual button for informational alert messages -->
+                      <button type="button" class="btn btn-info btn-xs" onclick="lihat_kriteria(<?php echo $item->kdKriteria; ?>)">
+                        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Lihat
+                      </button>
+
+                    </td>
+                  </tr>
+                <?php } ?>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

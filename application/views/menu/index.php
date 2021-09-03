@@ -17,7 +17,7 @@
     <title><?php echo $this->page->generateTitle(); ?></title>
 </head>
 
-<body id="body-pd">
+<body id="body-pd" class="noselect">
     <div class="l-navbar" id="navbar">
         <nav class="navigate">
             <div>
@@ -30,13 +30,15 @@
                         <ion-icon name="home-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Dashboard</span>
                     </a>
-                    <a href="<?php echo site_url('Kriteria') ?>" style="text-decoration: none; color: white;" class="nav__link">
+                    <a href="<?php echo site_url('Kriteria') ?>" style="text-decoration: none; color: white;" class="nav__link collapse">
                         <ion-icon name="chatbubbles-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Data Kriteria & Bobot</span>
                     </a>
 
                     <div class="nav__link collapse">
-                        <ion-icon name="folder-outline" class="nav__icon"></ion-icon>
+                        <a href="<?php echo site_url('Sekolah') ?>" style="text-decoration: none; color: white;">
+                            <ion-icon name="folder-outline" class="nav__icon"></ion-icon>
+                        </a>
                         <span class="nav__name "> Data Sekolah </span>
 
                         <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
@@ -49,7 +51,9 @@
                     </div>
 
                     <div class="nav__link collapse">
-                        <ion-icon name="people-outline" class="nav__icon"></ion-icon>
+                        <a href="<?php echo site_url('Sekolah/rangking') ?>" style="text-decoration: none; color: white;">
+                            <ion-icon name="people-outline" class="nav__icon"></ion-icon>
+                        </a>
                         <span class="nav__name">Rangking</span>
 
                         <ion-icon name="chevron-down-outline" class="collapse__link"></ion-icon>
@@ -60,10 +64,10 @@
                             <a href="<?php echo site_url('RangkingSMA') ?>" style="text-decoration: none;" class="collapse__sublink">SMA</a>
                         </ul>
                     </div>
-                    <a href="#" class="nav__link" style="text-decoration: none; color: white;">
+                    <!-- <a href="#" class="nav__link" style="text-decoration: none; color: white;">
                         <ion-icon name="settings-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Kuisioner</span>
-                    </a>
+                    </a> -->
                 </div>
             </div>
 
@@ -88,5 +92,50 @@
     <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
 
     <script src="<?php echo base_url(); ?>assets/js/sekolah.js"></script>
+    <script>
+        function killCopy(e) {
+            return false;
+        }
+
+        function reEnable() {
+            return true;
+        }
+        document.onselectstart = new Function("return false");
+        if (window.sidebar) {
+            document.onmousedown = killCopy;
+            document.onclick = reEnable;
+        }
+
+        if (document.addEventListener !== undefined) {
+            // Not IE
+            document.addEventListener('click', checkSelection, false);
+        } else {
+            // IE
+            document.attachEvent('onclick', checkSelection);
+        }
+
+        function checkSelection() {
+            var sel = {};
+            if (window.getSelection) {
+                // Mozilla
+                sel = window.getSelection();
+            } else if (document.selection) {
+                // IE
+                sel = document.selection.createRange();
+            }
+
+            // Mozilla
+            if (sel.rangeCount) {
+                sel.removeAllRanges();
+                return;
+            }
+
+            // IE
+            if (sel.text > '') {
+                document.selection.empty();
+                return;
+            }
+        }
+    </script>
 
 </html>

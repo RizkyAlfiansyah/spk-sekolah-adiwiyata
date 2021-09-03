@@ -13,69 +13,71 @@
   <?php
   }
   ?>
-
-  <div class="row">
-    <div class="form-group">
-      <a href="<?php echo site_url('SMP/tambah') ?>" type="button" class="btn btn-primary">Tambah
-        Sekolah</a>
+  <div id="main">
+    <div class="row">
+      <div class="form-group">
+        <a href="<?php echo site_url('SMP/tambah') ?>" type="button" class="btn btn-primary">Tambah
+          Sekolah</a>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="panel panel-primary">
-      <div class="panel-heading">List Sekolah Menengah Pertama</div>
-      <div class="panel-content">
-        <div class="table-responsive">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th class="col-md-1">No</th>
-                <th class="col-md-4">Nama Sekolah</th>
-                <th class="col-md-3">Alamat</th>
-                <th class="col-md-4">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php
-              $no = 1;
-              if (isset($sekolah)) {
-                if (count($sekolah) == 0) {
-                  echo '<tr><td colspan="3" class="text-center"><h3>No Data Input</h3></td></tr>';
-                }
-                foreach ($sekolah as $item) {
-              ?>
-                  <tr>
-                    <td><?php echo $no++ ?></td>
-                    <td><?php echo $item->sekolah ?></td>
-                    <td><?php echo $item->alamat ?></td>
-                    <td>
-                      <a class="btn btn-primary btn-xs" href="<?php echo site_url('SMP/tambah/' . $item->kdSekolah) ?>" role="button">
-                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Ubah
-                      </a>
+    <div class="row">
+      <div class="panel panel-primary">
+        <div class="panel-heading">List Sekolah Menengah Pertama</div>
+        <div class="panel-content">
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th class="col-md-1">No</th>
+                  <th class="col-md-4">Nama Sekolah</th>
+                  <th class="col-md-3">Alamat</th>
+                  <th class="col-md-4">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php
+                if (isset($sekolah)) {
+                  if (count($sekolah) == 0) {
+                    echo '<tr><td colspan="3" class="text-center"><h3>No Data Input</h3></td></tr>';
+                  }
+                  foreach ($sekolah as $item) {
+                ?>
+                    <tr>
+                      <td><?php echo ++$start ?></td>
+                      <td><?php echo $item->sekolah ?></td>
+                      <td><?php echo $item->alamat ?></td>
+                      <td>
+                        <a class="btn btn-primary btn-xs" href="<?php echo site_url('SMP/tambah/' . $item->kdSekolah) ?>" role="button">
+                          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Ubah
+                        </a>
 
-                      <a class="btn btn-danger btn-xs" href="<?php echo site_url("SMP/delete/" . $item->kdSekolah); ?>" onclick="return confirm('Hapus data?');">
-                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Hapus
-                      </a>
+                        <a class="btn btn-danger btn-xs" href="<?php echo site_url("SMP/delete/" . $item->kdSekolah); ?>" onclick="return confirm('Hapus data?');">
+                          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Hapus
+                        </a>
 
-                      <!-- Contextual button for informational alert messages -->
-                      <button type="button" class="btn btn-info btn-xs" onclick="lihatnilai(<?php echo $item->kdSekolah; ?>)">
-                        <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Lihat
-                      </button>
-                      <!-- Indicates a dangerous or potentially negative action -->
-                      <!-- <button type="button" data-toggle="modal" class="btn btn-danger btn-xs" data-target="#modalDelete<?= $item->kdSekolah ?>">
+                        <!-- Contextual button for informational alert messages -->
+                        <button type="button" class="btn btn-info btn-xs" onclick="lihatnilai(<?php echo $item->kdSekolah; ?>)">
+                          <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Lihat
+                        </button>
+                        <!-- Indicates a dangerous or potentially negative action -->
+                        <!-- <button type="button" data-toggle="modal" class="btn btn-danger btn-xs" data-target="#modalDelete<?= $item->kdSekolah ?>">
                           <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Hapus
                         </button> -->
-                    </td>
-                  </tr>
-              <?php
+                      </td>
+                    </tr>
+                <?php
+                  }
                 }
-              }
-              ?>
-            </tbody>
-          </table>
+                ?>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
 
+
+    <?= $this->pagination->create_links(); ?>
 
   </div>
 </div>
