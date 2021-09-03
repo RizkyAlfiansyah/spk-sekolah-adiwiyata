@@ -114,28 +114,28 @@
             document.attachEvent('onclick', checkSelection);
         }
 
-        function checkSelection() {
-            var sel = {};
-            if (window.getSelection) {
-                // Mozilla
-                sel = window.getSelection();
-            } else if (document.selection) {
-                // IE
-                sel = document.selection.createRange();
-            }
+        // function checkSelection() {
+        //     var sel = {};
+        //     if (window.getSelection) {
+        //         // Mozilla
+        //         sel = window.getSelection();
+        //     } else if (document.selection) {
+        //         // IE
+        //         sel = document.selection.createRange();
+        //     }
 
-            // Mozilla
-            if (sel.rangeCount) {
-                sel.removeAllRanges();
-                return;
-            }
+        //     // Mozilla
+        //     if (sel.rangeCount) {
+        //         sel.removeAllRanges();
+        //         return;
+        //     }
 
-            // IE
-            if (sel.text > '') {
-                document.selection.empty();
-                return;
-            }
-        }
+        //     // IE
+        //     if (sel.text > '') {
+        //         document.selection.empty();
+        //         return;
+        //     }
+        // }
     </script>
 
 </html>

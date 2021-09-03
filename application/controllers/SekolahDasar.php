@@ -25,8 +25,18 @@ class SekolahDasar extends MY_Controller
     public function index()
     {
 
+        if ($this->input->post('submit')) {
+            $data['keyword'] = $this->input->post('keyword');
+            $this->session->set_userdata('keyword', $data['keyword']);
+        } else {
+            $data['keyword'] = $this->session->userdata('keyword');
+        }
+
+        $this->db->like('sekolah', $data['keyword']);
+        $this->db->from('datasd');
+
         $config['base_url'] = 'http://localhost/spksekolah/SekolahDasar/index';
-        $config['total_rows'] = $this->MDasar->countAll();
+        $config['total_rows'] = $this->db->count_all_results();
         $config['per_page'] = 5;
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
@@ -41,12 +51,14 @@ class SekolahDasar extends MY_Controller
         $config['num_tag_open'] = '<li>';
         $config['num_tag_close'] = '</li>';
 
+        $data['total_rows'] = $config['total_rows'];
+
 
         $this->pagination->initialize($config);
         // dd($config['total_rows']);
 
         $data['start'] = $this->uri->segment(3);
-        $data['sekolah'] = $this->MDasar->getAll($config['per_page'], $data['start']);
+        $data['sekolah'] = $this->MDasar->getAll($config['per_page'], $data['start'], $data['keyword']);
         //dd($data['sekolah']);
         $this->load->view('menu/index', $data);
         $this->load->view('sd/index', $data);

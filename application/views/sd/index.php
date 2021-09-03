@@ -15,12 +15,21 @@
   ?>
   <div id="main">
     <div class="row">
+      <form action="<?= base_url('SekolahDasar') ?>" method="POST">
+        <div class="form-inline">
+          <div class="form-group" style="float: left;">
+            <input name="keyword" type="text" class="form-control" id="alamat" value="" placeholder="Search Keyword ..." autofocus>
+            <input name="submit" type="submit" class="btn btn-primary" value="Cari">
+          </div>
+        </div>
+      </form>
       <div class="form-group">
         <a href="<?php echo site_url('SekolahDasar/tambah') ?>" type="button" class="btn btn-primary">Tambah
           Sekolah</a>
       </div>
     </div>
     <div class="row">
+      <h4>Total <?= $total_rows; ?> Data</h4>
       <div class="panel panel-primary">
         <div class="panel-heading">List Sekolah Dasar</div>
         <div class="panel-content">

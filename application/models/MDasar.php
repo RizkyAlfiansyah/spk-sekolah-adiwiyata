@@ -45,8 +45,13 @@ class MDasar extends CI_Model
         return $sekolah;
     }
 
-    public function getAll($limit, $start)
+    public function getAll($limit, $start, $keyword = null)
     {
+
+        if ($keyword) {
+            $this->db->like('sekolah', $keyword);
+        }
+
         $sekolah = array();
         $query = $this->db->get($this->getTable(), $limit, $start);
         if ($query->num_rows() > 0) {
