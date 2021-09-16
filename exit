@@ -1,0 +1,86 @@
+[33mcommit 9178843db96f205dc6875cc75e0abe1ceb06a25b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: MuliyadiBasri <muliyadi.ultras21@gmail.com>
+Date:   Sat Sep 4 00:04:00 2021 +0800
+
+    modif sedikit
+
+[33mcommit d26ebf6fde9bffc932da02e2388162daac1c667b[m
+Merge: de46090 fd56dd1
+Author: RizkyAlfiansyah <rizkkyaf@gmail.com>
+Date:   Fri Sep 3 20:11:28 2021 +0800
+
+    Merge branch 'master' of https://github.com/RizkyAlfiansyah/spk-sekolah-adiwiyata
+
+[33mcommit de46090110da6698d29562d25f04ea35dd9072be[m
+Author: RizkyAlfiansyah <rizkkyaf@gmail.com>
+Date:   Fri Sep 3 20:11:16 2021 +0800
+
+    menambahkan fitur search data
+
+[33mcommit fd56dd1c66b62b1ef9192e06d03637ab342048a5[m
+Author: RizkyAlfiansyah <37681694+RizkyAlfiansyah@users.noreply.github.com>
+Date:   Fri Sep 3 14:57:17 2021 +0800
+
+    Update readme.rst
+
+[33mcommit 79870cd323cb89130e1464bd0b6f2b523a5e3e78[m
+Author: RizkyAlfiansyah <37681694+RizkyAlfiansyah@users.noreply.github.com>
+Date:   Fri Sep 3 14:57:01 2021 +0800
+
+    Update readme.rst
+
+[33mcommit 1651f2623d4d33e14cce81112c806caf6a9bd7b1[m
+Author: RizkyAlfiansyah <rizkkyaf@gmail.com>
+Date:   Fri Sep 3 14:52:59 2021 +0800
+
+    finalisasi
+
+[33mcommit b53d0cd73654ea9dbb30177415b56ff07f71a137[m
+Merge: 7c49b85 de07f20
+Author: RizkyAlfiansyah <rizkkyaf@gmail.com>
+Date:   Fri Sep 3 14:50:52 2021 +0800
+
+    Merge branch 'master' of https://github.com/RizkyAlfiansyah/spk-sekolah-adiwiyata
+
+[33mcommit 7c49b859151da2af4ffda185ab0a7e8e84f75296[m
+Merge: ace7cbf 6b39ebc
+Author: RizkyAlfiansyah <rizkkyaf@gmail.com>
+Date:   Fri Sep 3 14:46:15 2021 +0800
+
+    finalisasi
+
+[33mcommit de07f209491e14c1fd641c91dafa36fe45565419[m
+Author: RizkyAlfiansyah <37681694+RizkyAlfiansyah@users.noreply.github.com>
+Date:   Sun Aug 29 01:40:48 2021 +0800
+
+    Add files via upload
+
+[33mcommit ace7cbfe65b8ecd707fb72453a1b962028f6b84a[m
+Author: RizkyAlfiansyah <rizkkyaf@gmail.com>
+Date:   Sun Aug 29 01:35:47 2021 +0800
+
+    tambah database
+
+[33mcommit 6b39ebcdf9ff0bb07340122dfd1cf9dd5a7ceb44[m
+Author: RizkyAlfiansyah <37681694+RizkyAlfiansyah@users.noreply.github.com>
+Date:   Sat Aug 21 01:04:55 2021 +0800
+
+    Delete db directory
+
+[33mcommit b68aa5901200f8354177ebd9ad75936e4be7e13e[m
+Author: RizkyAlfiansyah <37681694+RizkyAlfiansyah@users.noreply.github.com>
+Date:   Sat Aug 21 01:04:29 2021 +0800
+
+    Delete spksekolah2.zip
+
+[33mcommit 2247d81b15d15f388d6da57b45d186934b60c692[m
+Author: RizkyAlfiansyah <37681694+RizkyAlfiansyah@users.noreply.github.com>
+Date:   Sat Aug 21 01:04:18 2021 +0800
+
+    Delete spksekolah.zip
+
+[33mcommit a007c3e7229226a1232f0b2be5e466ae4511b468[m
+Author: RizkyAlfiansyah <rizkkyaf@gmail.com>
+Date:   Sat Aug 21 00:59:02 2021 +0800
+
+    first commit

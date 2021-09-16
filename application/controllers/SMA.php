@@ -30,7 +30,6 @@ class SMA extends MY_Controller
             $this->session->set_flashdata('message', 'Hasil Pencarian');
         } else {
             $data['keyword'] = $this->session->userdata('keyword');
-            redirect ('SMP');
         }
 
         $this->db->like('sekolah', $data['keyword']);
