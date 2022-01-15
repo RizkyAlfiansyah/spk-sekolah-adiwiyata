@@ -25,6 +25,8 @@
                     <ion-icon name="menu-outline" class="nav__toggle" id="nav-toggle"></ion-icon>
                     <h2><?php echo $this->session->userdata("nama"); ?></h2>
                 </div>
+                <?php if($this->session->userdata('level') == "admin") { ?>
+                
                 <div class="nav__list">
                     <a href="<?php echo site_url('Welcome') ?>" style="text-decoration: none; color: white;" class="nav__link collapse">
                         <ion-icon name="home-outline" class="nav__icon"></ion-icon>
@@ -50,6 +52,8 @@
                         </ul>
                     </div>
 
+                    <?php } ?>
+
                     <div class="nav__link collapse">
                         <a href="<?php echo site_url('Sekolah/rangking') ?>" style="text-decoration: none; color: white;">
                             <ion-icon name="people-outline" class="nav__icon"></ion-icon>
@@ -68,13 +72,13 @@
                         <ion-icon name="settings-outline" class="nav__icon"></ion-icon>
                         <span class="nav__name">Kuisioner</span>
                     </a> -->
+                    <a href="<?php echo base_url('Auth/logout'); ?>" style="text-decoration: none; color: white;" class="nav__link">
+                        <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
+                        <span class="nav__name">Log Out</span>
+                    </a>
                 </div>
             </div>
 
-            <a href="<?php echo base_url('Auth/logout'); ?>" style="text-decoration: none; color: white;" class="nav__link">
-                <ion-icon name="log-out-outline" class="nav__icon"></ion-icon>
-                <span class="nav__name">Log Out</span>
-            </a>
         </nav>
     </div>
 

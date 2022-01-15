@@ -30,4 +30,10 @@ class Sekolah extends MY_Controller
         $this->load->view('menu/index');
         $this->load->view('sekolah/rangking');
     }
+    public function rangkingGuest()
+    {
+        $this->page->setTitle('Daftar Sekolah');
+        $this->load->view('layout/head');
+        $this->load->view('sekolah/rangking');
+    }
 }

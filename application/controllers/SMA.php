@@ -37,7 +37,7 @@ class SMA extends MY_Controller
 
         $config['base_url'] = 'http://localhost/spksekolah/SMA/index';
         $config['total_rows'] = $this->db->count_all_results();
-        $config['per_page'] = 5;
+        $config['per_page'] = 10;
         $config['full_tag_open'] = '<ul class="pagination">';
         $config['full_tag_close'] = '</ul>';
         $config['next_link'] = '&raquo';
