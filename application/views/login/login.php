@@ -23,7 +23,7 @@
         <!-- <img src="assets/images/logo.png" alt="logo" width="100" class="position-relative"> -->
         <h4 class="text-center mx-2 " style="font-family:'Poppins', sans-serif; "><strong>Sistem Pendukung Keputusan Penentuan Sekolah Adiwiyata Menggunakan Metode Simple Additive Weighting</strong> </h4>
       </div>
-      <form class="col-md-7 mx-auto bg-light bg-gradient shadow  p-3 py-5 mt-5 mb-5 border border-3 border-light rounded-3" action="<?php echo base_url('Auth/login'); ?>" method="post">
+      <form class="col-md-7 mx-auto bg-light bg-gradient shadow  p-3 py-5 mt-5 mb-5 border border-3 border-light rounded-3" action="<?php echo base_url('Auth/cek_login'); ?>" method="post">
         <div class="text-center" style="color: red;margin-bottom: 15px;">
           <?php
           // Cek apakah terdapat session nama message
