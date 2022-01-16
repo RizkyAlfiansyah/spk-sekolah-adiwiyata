@@ -65,7 +65,7 @@
                                                                                                                                                                     }
                                                                                                                                                                 }
                                                                                                                                                             } else {
-                                                                                                                                                                if ($no == 3) {
+                                                                                                                                                                if ($no ==3) {
                                                                                                                                                                             ?> checked="checked" <?php
                                                                                                                                                                                                 }
                                                                                                                                                                                             }

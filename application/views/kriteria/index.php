@@ -227,7 +227,7 @@
             <?php
             $no = 1;
 
-            for ($no; $no <= 4; $no++) {
+            for ($no; $no <= 5; $no++) {
             ?>
 
               <div class="col-md-4"><b>Item Kriteria <?php echo $no ?> :</b></div>

@@ -23,6 +23,7 @@ class Kriteria extends MY_Controller
             array('field' => 'itemKriteria2', 'label' => '', 'rules' => 'trim|required'),
             array('field' => 'itemKriteria3', 'label' => '', 'rules' => 'trim|required'),
             array('field' => 'itemKriteria4', 'label' => '', 'rules' => 'trim|required'),
+            array('field' => 'itemKriteria5', 'label' => '', 'rules' => 'trim|required'),
         );
 
         return $validation;
@@ -48,6 +49,7 @@ class Kriteria extends MY_Controller
             array('field' => 'itemKriteria2', 'label' => '', 'rules' => 'trim|required'),
             array('field' => 'itemKriteria3', 'label' => '', 'rules' => 'trim|required'),
             array('field' => 'itemKriteria4', 'label' => '', 'rules' => 'trim|required'),
+            array('field' => 'itemKriteria5', 'label' => '', 'rules' => 'trim|required'),
         );
 
         return $validation;
@@ -86,10 +88,14 @@ class Kriteria extends MY_Controller
                         ),
                         array(
                             'subKriteria' => $this->input->post('itemKriteria3', true),
-                            'value' => 0.75
+                            'value' => 0.5
                         ),
                         array(
                             'subKriteria' => $this->input->post('itemKriteria4', true),
+                            'value' => 0.75
+                        ),
+                        array(
+                            'subKriteria' => $this->input->post('itemKriteria5', true),
                             'value' => 1
                         )
 
